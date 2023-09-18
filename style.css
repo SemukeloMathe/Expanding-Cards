@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Borel', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  /* height: 100vh; */
+  background-color: #5C8374;
+}
+
+h1 {
+  color: #0F2C59;
+  font-family: 'Borel', cursive;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.panel {
+  background-size: cover;
+  /* Change to "background-size: cover" to preserve rounded corners on large screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #952323;
+  cursor: pointer;
+  flex: 0.2;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  /* bottom: 20px; */
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 6;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.9s;
+}
+
+@media(max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6),
+  .panel:nth-of-type(7),
+  .panel:nth-of-type(8),
+  .panel:nth-of-type(9) {
+    display: none;
+  }
+}
